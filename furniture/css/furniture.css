@@ -241,6 +241,18 @@
   z-index: 20;
 }
 
+/* 아이패드 미니 4 전용 강제 좌표 해제 */
+.modal_swiper .swiper-button-prev {
+  left: 20px !important;
+  right: auto !important;
+  transform: translateY(-50%) !important; /* JS가 transform을 지워버리는 것 방지 */
+}
+
+.modal_swiper .swiper-button-next {
+  right: 20px !important;
+  left: auto !important;
+  transform: translateY(-50%) !important;
+}
 /* 제목 */
 .modal_title_wrap {
   position: absolute;
@@ -401,13 +413,6 @@
   .text_group h1.active {
     opacity: 1;
     transform: translateY(-125px);
-  }
-  .swiper-button-prev {
-    transform: none !important;
-  }
-
-  .swiper-button-next {
-    transform: none !important;
   }
 }
 @media (max-width: 900px) {
