@@ -402,6 +402,13 @@
     opacity: 1;
     transform: translateY(-125px);
   }
+  .swiper-button-prev::after {
+    content: "prev" !important;
+  }
+
+  .swiper-button-next::after {
+    content: "next" !important;
+  }
 }
 @media (max-width: 900px) {
   .modal_content {
