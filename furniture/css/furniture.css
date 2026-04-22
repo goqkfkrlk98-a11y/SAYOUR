@@ -140,7 +140,7 @@
   display: none;
 }
 .coll_text {
-  font-family: "Playfair Display", serif;
+  font-family: "Noto Serif KR";
   color: white;
   font-size: 18px;
   margin-top: 10px;
@@ -311,6 +311,7 @@
 
 .modal_box {
   margin-bottom: 15px;
+  font-family: "Noto Serif KR";
 }
 
 .modal_box h3 {

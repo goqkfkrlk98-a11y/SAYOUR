@@ -61,7 +61,7 @@ body {
   background-color: #2c2a284b;
 }
 .sec1_menu li a {
-  font-family: "Playfair Display", serif;
+  font-family: "Noto Serif KR";
   font-size: 18px;
   color: #fff;
   padding-bottom: 16px;
@@ -351,7 +351,7 @@ body {
 }
 
 .sec4_title {
-  font-family: "Playfair Display", serif;
+  font-family: "Noto Serif KR";
   font-size: 30px;
   font-weight: 600;
 

@@ -55,9 +55,9 @@
 .text_group {
   position: relative;
   z-index: 2;
+  font-family: "Noto Serif KR";
 }
 .text_group h1 {
-  font-family: "Playfair Display", serif;
   font-size: 80px;
   font-weight: 400;
   color: #2c2a28;
@@ -91,7 +91,7 @@
   font-size: 35px;
   color: #2c2a28;
   font-weight: 400;
-  font-family: "Playfair Display", serif;
+  font-family: "Noto Serif KR";
 }
 
 /* 부모 영역 */
@@ -121,7 +121,7 @@
   font-size: 30px;
   color: #a89f94;
   transition: 0.3s;
-  font-family: "Playfair Display", serif;
+  font-family: "Noto Serif KR";
 }
 .left_menu ul li.active a,
 .left_menu ul li a:hover {

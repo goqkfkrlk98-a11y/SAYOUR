@@ -145,19 +145,50 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.style.overflow = "hidden";
 
       if (modalSwiper) modalSwiper.destroy();
+
       modalSwiper = new Swiper(".modal_swiper", {
         observer: true,
         observeParents: true,
+        watchOverflow: true, // 슬라이드가 하나일 때 버튼 숨김 방지 및 최적화
+
+        // 중요: 구형 Webkit 브라우저(아이패드 미니4)를 위한 정렬 보정
+        centeredSlides: false,
+
         pagination: {
           el: ".swiper-pagination",
           clickable: true,
-          dynamicBullets: true,
+          // dynamicBullets: true, // 아이패드 구형에서 위치가 튄다면 이 줄을 주석 처리해보세요.
         },
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
+
+        // 아이패드 미니 4 사파리 대응: 초기화 후 레이아웃 재계산 강제
+        on: {
+          init: function () {
+            const swiper = this;
+            setTimeout(() => {
+              swiper.update(); // 렌더링 후 위치 다시 잡기
+            }, 300);
+          },
+        },
       });
+
+      // if (modalSwiper) modalSwiper.destroy();
+      // modalSwiper = new Swiper(".modal_swiper", {
+      //   observer: true,
+      //   observeParents: true,
+      //   pagination: {
+      //     el: ".swiper-pagination",
+      //     clickable: true,
+      //     dynamicBullets: true,
+      //   },
+      //   navigation: {
+      //     nextEl: ".swiper-button-next",
+      //     prevEl: ".swiper-button-prev",
+      //   },
+      // });
     });
   });
 
