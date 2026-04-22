@@ -386,6 +386,9 @@
 @media (max-width: 1300px) {
 }
 @media (max-width: 1280px) {
+  .modal_swiper {
+    direction: ltr !important;
+  }
 }
 @media (max-width: 980px) {
   #banner img {
