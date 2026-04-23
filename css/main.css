@@ -540,6 +540,9 @@
     font-size: 3.8rem;
     margin-left: 7.5vw;
   }
+  .sec4_item {
+    padding: 1rem 0;
+  }
 }
 @media (max-width: 980px) {
   .sec1 {
