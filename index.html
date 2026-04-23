@@ -365,10 +365,10 @@
             <p class="description">공간을 통해 사유의 흐름을 설계하는<br />경험 기반 플랫폼.</p>
           </div>
           <div class="footer_menu">
-            <a href="#">ABOUT <span>소개</span></a>
-            <a href="#">SPACE <span>공간</span></a>
-            <a href="#">FURNITURE <span>가구</span></a>
-            <a href="#">CONTACT <span>문의</span></a>
+            <a href="about/about.html">ABOUT <span>소개</span></a>
+            <a href="space/space.html">SPACE <span>공간</span></a>
+            <a href="furniture/furniture.html">FURNITURE <span>가구</span></a>
+            <a href="contact/contact.html">CONTACT <span>문의</span></a>
           </div>
 
           <div class="footer_contact">
@@ -378,9 +378,15 @@
           </div>
 
           <div class="footer_section">
-            <a href="#"><i class="fa-brands fa-instagram"></i>instagram</a>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i>facebook</a>
-            <a href="#"><i class="fa-brands fa-square-x-twitter"></i>twitter</a>
+            <a href="https://www.instagram.com/kim.mi.jo?igsh=MThlZjh6bTg5b2NqaA%3D%3D&utm_source=qr"
+              ><i class="fa-brands fa-instagram"></i>instagram</a
+            >
+            <a href="https://www.instagram.com/7zxlko?igsh=azV4NG11NDZzYnJu&utm_source=qr"
+              ><i class="fa-brands fa-square-facebook"></i>facebook</a
+            >
+            <a href="https://www.instagram.com/hajungmoon?igsh=cnhmN2lpZ2t4dzI%3D&utm_source=qr"
+              ><i class="fa-brands fa-square-x-twitter"></i>twitter</a
+            >
           </div>
         </div>
         <div class="footer_bottom">
@@ -401,71 +407,92 @@
 
     <script>
       //****************************LODING*************************
+
       const isVisited = sessionStorage.getItem("visited");
 
       if (!isVisited) {
         sessionStorage.setItem("visited", "true");
-        const tl = gsap.timeline();
 
-        // 1. 처음부터 보이는 상태 (대기)
-        tl.to({}, { duration: 0.7 });
+        const mm = gsap.matchMedia();
 
-        // 2. 살짝 벌어짐
-        tl.to(".logo-circle", { x: -40, duration: 0.4 });
-        tl.to(".logo-text", { x: 40, duration: 0.4 }, "<");
+        // PC / 태블릿
+        mm.add("(min-width: 481px)", () => {
+          const tl = gsap.timeline();
 
-        // 3. 잠깐 멈춤
-        tl.to({}, { duration: 0.3 });
+          tl.to({}, { duration: 0.7 });
 
-        // 4. 흰화면 + 로고 같이 갈라짐 (핵심)
-        tl.to(".white-left", {
-          x: "-100%",
-          duration: 1,
-          ease: "power4.inOut",
+          tl.to(".logo-circle", { x: -40, duration: 0.4 });
+          tl.to(".logo-text", { x: 40, duration: 0.4 }, "<");
+
+          tl.to({}, { duration: 0.3 });
+
+          tl.to(".white-left", {
+            x: "-100%",
+            duration: 1,
+            ease: "power4.inOut",
+          });
+
+          tl.to(
+            ".white-right",
+            {
+              x: "100%",
+              duration: 1,
+              ease: "power4.inOut",
+            },
+            "<",
+          );
+
+          tl.to(
+            ".logo-circle",
+            {
+              x: -800,
+              duration: 1,
+              ease: "power4.inOut",
+            },
+            "<",
+          );
+
+          tl.to(
+            ".logo-text",
+            {
+              x: 800,
+              duration: 1,
+              ease: "power4.inOut",
+            },
+            "<",
+          );
+
+          tl.to("#loading", {
+            opacity: 0,
+            duration: 2.2,
+            ease: "power1.inOut",
+            delay: 0.2,
+            onComplete: () => {
+              document.getElementById("loading").remove();
+            },
+          });
         });
 
-        tl.to(
-          ".white-right",
-          {
-            x: "100%",
-            duration: 1,
-            ease: "power4.inOut",
-          },
-          "<",
-        );
+        // 모바일
+        mm.add("(max-width: 480px)", () => {
+          const tl = gsap.timeline();
 
-        tl.to(
-          ".logo-circle",
-          {
-            x: -800,
+          tl.to(".logo-wrap", {
+            opacity: 0,
             duration: 1,
-            ease: "power4.inOut",
-          },
-          "<",
-        );
+            delay: 0.6,
+            ease: "power1.out",
+          });
 
-        tl.to(
-          ".logo-text",
-          {
-            x: 800,
-            duration: 1,
-            ease: "power4.inOut",
-          },
-          "<",
-        );
-
-        // 5. 검은 화면 노출 후 페이드
-        tl.to("#loading", {
-          opacity: 0,
-          duration: 2.2,
-          ease: "power1.inOut",
-          delay: 0.2,
-          onComplete: () => {
-            document.getElementById("loading").remove();
-          },
+          tl.to("#loading", {
+            opacity: 0,
+            duration: 0.6,
+            onComplete: () => {
+              document.getElementById("loading").remove();
+            },
+          });
         });
       } else {
-        // 이미 방문했으면 로딩 아예 제거
         const loading = document.getElementById("loading");
         if (loading) loading.remove();
       }

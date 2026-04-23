@@ -148,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
       modalSwiper = new Swiper(".modal_swiper", {
         observer: true,
         observeParents: true,
+        touchStartPreventDefault: false,
         pagination: {
           el: ".swiper-pagination",
           clickable: true,

@@ -140,7 +140,7 @@
   display: none;
 }
 .coll_text {
-  font-family: "Noto Serif KR";
+  font-family: "Playfair Display", serif;
   color: white;
   font-size: 18px;
   margin-top: 10px;
@@ -240,6 +240,7 @@
   cursor: pointer;
   z-index: 20;
 }
+
 /* 제목 */
 .modal_title_wrap {
   position: absolute;
@@ -258,7 +259,7 @@
 }
 
 /* 왼쪽 이미지 */
-.modal_left {
+/* .modal_left {
   padding-top: 100px;
   box-sizing: border-box;
 }
@@ -266,8 +267,23 @@
 .modal_left img {
   width: 100%;
   display: block;
+} */
+.modal_left {
+  padding-top: 0; /* 기존 100px 제거하여 이미지 올림 */
+  display: flex;
+  align-items: center; /* 수직 중앙 정렬 */
+  justify-content: center;
+  width: 35%; /* 필요에 따라 너비 조정 */
+  height: 100%;
+  box-sizing: border-box;
 }
 
+.modal_left img {
+  width: 100%;
+  height: auto;
+  max-height: 80%; /* 이미지가 너무 크면 조절 가능 */
+  object-fit: contain;
+}
 /* 오른쪽 텍스트 */
 .modal_right {
   width: 65%;
@@ -278,13 +294,14 @@
   overflow-y: auto;
   padding: 100px 40px 40px 20px;
   box-sizing: border-box;
+  scroll-behavior: auto;
 }
 /* 1. 스크롤바 전체 너비 */
 .modal_right::-webkit-scrollbar {
   width: 6px;
 }
 .modal_right::-webkit-scrollbar-thumb {
-  background: #2c2a28;
+  background: #2c2a2838;
   border-radius: 10px;
   border: 2px solid transparent;
   background-clip: padding-box;
@@ -298,7 +315,6 @@
 
 .modal_box {
   margin-bottom: 15px;
-  font-family: "Noto Serif KR";
 }
 
 .modal_box h3 {
@@ -374,12 +390,6 @@
 @media (max-width: 1300px) {
 }
 @media (max-width: 1280px) {
-  .modal_swiper {
-    direction: ltr !important;
-  }
-  .modal_swiper .swiper-button-prev {
-    transform: rotate(180deg);
-  }
 }
 @media (max-width: 980px) {
   #banner img {
@@ -463,8 +473,8 @@
   }
   .bg_logo img {
     width: 200px;
-    margin: 0 auto;
   }
+
   .text_group p {
     font-size: 60px;
   }
@@ -486,7 +496,6 @@
 @media (max-width: 480px) {
   .bg_logo img {
     width: 150px;
-    margin: 0 auto;
   }
   .text_group p {
     font-size: 50px;

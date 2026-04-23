@@ -240,9 +240,9 @@
             <p class="description">공간을 통해 사유의 흐름을 설계하는<br />경험 기반 플랫폼.</p>
           </div>
           <div class="footer_menu">
-            <a href="#">ABOUT <span>소개</span></a>
+            <a href="../about/about.html">ABOUT <span>소개</span></a>
             <a href="../space/space.html">SPACE <span>공간</span></a>
-            <a href="../furniture/furniture.html">FURNITURE <span>가구</span></a>
+            <a href="furniture.html">FURNITURE <span>가구</span></a>
             <a href="../contact/contact.html">CONTACT <span>문의</span></a>
           </div>
 
@@ -255,9 +255,15 @@
           </div>
 
           <div class="footer_section">
-            <a href="#"><i class="fa-brands fa-instagram"></i>instagram</a>
-            <a href="#"><i class="fa-brands fa-square-facebook"></i>facebook</a>
-            <a href="#"><i class="fa-brands fa-square-x-twitter"></i>twitter</a>
+            <a href="https://www.instagram.com/kim.mi.jo?igsh=MThlZjh6bTg5b2NqaA%3D%3D&utm_source=qr"
+              ><i class="fa-brands fa-instagram"></i>instagram</a
+            >
+            <a href="https://www.instagram.com/7zxlko?igsh=azV4NG11NDZzYnJu&utm_source=qr"
+              ><i class="fa-brands fa-square-facebook"></i>facebook</a
+            >
+            <a href="https://www.instagram.com/hajungmoon?igsh=cnhmN2lpZ2t4dzI%3D&utm_source=qr"
+              ><i class="fa-brands fa-square-x-twitter"></i>twitter</a
+            >
           </div>
         </div>
         <div class="footer_bottom">
@@ -411,6 +417,10 @@
         smoothTouch: false, // 터치 기기에서는 기본 스크롤 사용 권장
         touchMultiplier: 2,
         infinite: false,
+
+        prevent: (node) => {
+          return node.closest(".modal_right");
+        },
       });
 
       // 애니메이션 루프 (매 프레임마다 스크롤 위치 업데이트)

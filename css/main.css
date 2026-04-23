@@ -103,8 +103,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 70%;
-  max-width: 700px;
+  /* width: 70%; */
+  max-width: 500px;
 
   opacity: 0.7;
   z-index: 0;
@@ -499,11 +499,6 @@
   .sec1 h1 {
     font-size: 100px;
   }
-
-  .sec1 .bgLogo {
-    width: 60%;
-    max-width: 600px;
-  }
   .sec3 {
     padding: 120px 3rem 180px 3rem;
   }
@@ -565,8 +560,8 @@
   }
 
   .sec1 .bgLogo {
-    width: 65%;
-    max-width: 500px;
+    /* width: 65%; */
+    max-width: 400px;
     opacity: 0.7;
   }
   .sec3 {
@@ -605,7 +600,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    font-size: 10px;
+    font-size: 14px;
   }
 
   /* section4 */
@@ -720,4 +715,9 @@
   .sec4_item_title {
     font-size: 2rem;
   }
+  /* 로딩 */
+  .logo-wrap {
+    gap: 0;
+  }
+  /* 로딩 */
 }
